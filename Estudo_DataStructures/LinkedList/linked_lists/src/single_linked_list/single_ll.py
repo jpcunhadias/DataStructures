@@ -1,8 +1,4 @@
-class Node:
-    
-    def __init__(self, value, next = None):
-        self.value = value
-        self.next = next
+from nodes import Node
 
 class SingleLinkedList:
     
@@ -25,6 +21,18 @@ class SingleLinkedList:
         else:
             self.tail.next = new_node
             self.tail = new_node
+            
+    def prepend(self, value):
+        """Function to prepend new node to the beginning of the list
+
+        Parameters
+        ----------
+        value : any
+            value to be added to the beginning of the list
+        """
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
     
     def length(self):
         """Function to get the length of the list
