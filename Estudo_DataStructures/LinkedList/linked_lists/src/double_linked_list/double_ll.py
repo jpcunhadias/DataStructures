@@ -112,7 +112,7 @@ class DoubleLinkedList:
         print('------------------')
         
     def to_list(self):
-        """Function to convert the list to a list"""
+        """Function to convert the linked-list to a list"""
         result = []
         current_node = self.head
         while current_node is not None:
