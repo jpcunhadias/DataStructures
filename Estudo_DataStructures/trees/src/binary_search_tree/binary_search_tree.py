@@ -1,7 +1,7 @@
-from nodes import Node
+from Estudo_DataStructures.trees.nodes import Node
+
 
 class BinarySearchTree:
-    
     """Binary Search Tree implementation in Python.
     
     a Binary Search Tree is a node-based binary tree data structure which has the following properties:
@@ -13,11 +13,21 @@ class BinarySearchTree:
     5. The tree is empty or the root node is the only node in the tree.
     
     """
-    
+
     def __init__(self):
         self.root = None
 
-    def insert(self, value):
+    def insert(self, value: int) -> None:
+        """
+        The insert function takes a value and inserts it into the tree. If the value is less than the current node, then
+        it goes to its left child. Otherwise, it goes to its right child.
+
+        :param self: Reference the object itself
+        :param value:int: Specify the value of the node to be inserted
+        :return: None
+        :doc-author: Trelent
+        """
+
         new_node = Node(value)
         if self.root is None:
             self.root = new_node
@@ -35,7 +45,17 @@ class BinarySearchTree:
                     return
                 current_node = current_node.right
 
-    def search(self, value):
+    def search(self, value: int) -> Node:
+        """
+        The search function takes in a value and returns the node with that value. If no such node exists,
+        it returns None.
+
+        :param self: Reference the object that is being created
+        :param value:int: Search for a value in the tree
+        :return: The node with the given value
+        :doc-author: Trelent
+        """
+
         if self.root is None:
             return None
         current_node = self.root
@@ -48,7 +68,17 @@ class BinarySearchTree:
                 current_node = current_node.right
         return None
 
-    def delete(self, value):
+    def delete(self, value: int) -> None:
+        """
+        The delete function takes a value as input and searches for the node with that value. If it finds the node,
+        it will delete that node from the tree. If there is no such node, then nothing happens.
+
+        :param self: Reference the current instance of the class
+        :param value:int: Store the value of the node that is to be deleted
+        :return: None
+        :doc-author: Trelent
+        """
+
         if self.root is None:
             return
         current_node = self.root
@@ -80,7 +110,7 @@ class BinarySearchTree:
                     return
                 else:
                     # node has two children
-                    # find the successor (smallest node in right subtree)
+                    # find the successor (the smallest node in right subtree)
                     successor_node = current_node.right
                     successor_parent_node = current_node
                     while successor_node.left is not None:
