@@ -6,6 +6,7 @@ class BinaryTree:
     A binary tree is a tree data structure in which each node has at most two children, 
     which are referred to as the left child and the right child.
     
+    The greater children are on the right and the lesser children are on the left of the parent node.
     
     """
 
