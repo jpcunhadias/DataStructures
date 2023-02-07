@@ -1,4 +1,4 @@
-from nodes import Node
+from Estudo_DataStructures.trees.nodes import Node
 
 
 class BinaryTree:
@@ -30,7 +30,7 @@ class BinaryTree:
         else:
             self._insert(self.root, value)
 
-    def _insert(self, current, value):
+    def _insert(self, current: Node, value: int) -> None:
         if current.value > value:
             if current.left is None:
                 current.left = Node(value)
@@ -113,7 +113,7 @@ class BinaryTree:
                 current.right = self._delete(current.right, smallest.value)
         return current
 
-    def print_tree(self, node, level=0):
+    def print_tree(self, node: Node, level: int = 0):
         """
         The print_tree function prints out the values of tree nodes in a hierarchical order.
         For example, the following code:
