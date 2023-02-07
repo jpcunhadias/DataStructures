@@ -1,4 +1,5 @@
 from Estudo_DataStructures.trees.nodes import Node
+from typing import Union
 
 
 class BinaryTree:
@@ -45,12 +46,12 @@ class BinaryTree:
             # value is already in the tree
             pass
 
-    def search(self, value: int) -> Node:
+    def search(self, value: int) -> Union[bool, Node]:
         """
         The search function takes a value and searches the tree for that value.
         If it finds the value, it returns True. If not, it returns False.
 
-        :param self: Access the class attributes
+        :param self: Access the class attributes'
         :param value:int: Store the value of the node that is being searched for
         :return: The node that contains the value we are searching for
         :doc-author: Trelent
@@ -61,7 +62,7 @@ class BinaryTree:
         else:
             return self._search(self.root, value)
 
-    def _search(self, current: Node, value: int) -> Node:
+    def _search(self, current: Node, value: int) -> Union[bool, Node]:
         if current is None:
             return False
         elif current.value == value:
@@ -70,6 +71,39 @@ class BinaryTree:
             return self._search(current.left, value)
         else:
             return self._search(current.right, value)
+
+    def find_smallest(self, root: Node) -> Union[None, Node]:
+        """
+        The find_smallest function finds the smallest value in the tree.
+        It does this by calling _find_smallest, which is a recursive function that
+        traverses the tree until it finds the smallest value.
+
+        :param self: Access the attributes and methods of the class
+        :param root: Traverse the tree
+        :return: The smallest value in the tree
+        :doc-author: Trelent
+        """
+
+        if self.root is None:
+            return None
+        else:
+            return self._find_smallest(root)
+
+    def _find_smallest(self, node: Node) -> Node:
+        """
+        The _find_smallest function finds the smallest value in a given tree.
+        It does this by recursively traversing through the left side of each node until it reaches
+        the end, at which point it returns that node's value. It is called from within the find_smallest function.
+
+        :param self: Access the class attributes
+        :param node:Node: Traverse the tree
+        :return: The smallest value in the tree
+        :doc-author: Trelent
+        """
+
+        if node.left:
+            return self._find_smallest(node.left)
+        return node
 
     def delete(self, value: int) -> None:
         """
@@ -87,7 +121,28 @@ class BinaryTree:
         else:
             self.root = self._delete(self.root, value)
 
-    def _delete(self, current: Node, value: int) -> Node:
+    def _delete(self, current: Node, value: int) -> Union[None, Node]:
+        """
+        The _delete function takes a node and a value as arguments.
+        If the node is None, it returns None.
+        Otherwise, if the current node's value is greater than the given value,
+        it recursively calls _delete on its left child with the same arguments.
+        If that call returns something other than None, it sets that return to be
+        the current node's new left child (because we're deleting from its right subtree).
+        Otherwise, (if _delete returned None), then we know that either:
+
+        1) there was no left child;
+        or
+        2) all of our left subtree was deleted and
+
+        :param self: Reference the object itself
+        :param current:Node: Keep track of the current node
+        :param value:int: Store the value of the node that is to be deleted
+        :return: The node that was deleted
+        :doc-author: Trelent
+        """
+        """"""
+
         if current is None:
             return None
         elif current.value > value:

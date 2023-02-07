@@ -1,4 +1,5 @@
 from Estudo_DataStructures.trees.nodes import Node
+from typing import Union
 
 
 class BinarySearchTree:
@@ -45,7 +46,7 @@ class BinarySearchTree:
                     return
                 current_node = current_node.right
 
-    def search(self, value: int) -> Node:
+    def search(self, value: int) -> Union[None, Node]:
         """
         The search function takes in a value and returns the node with that value. If no such node exists,
         it returns None.

@@ -1,5 +1,6 @@
 from tree_nodes import TreeNode
 
+
 class Tree:
     def __init__(self, root_val: int = None) -> None:
         self.root = TreeNode(root_val)
