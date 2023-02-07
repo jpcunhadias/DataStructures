@@ -12,7 +12,7 @@ In conclusion, data structures are fundamental to computer science and play a cr
 Having this in mind, I developed this repository for personal purposes in order to publish articles and help those who want to understand this very important but not so intuitive subject.
 
 
-## Referência
+## References
 
  - [Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-fourth-Thomas-Cormen/dp/026204630X)
  - [Advanced Algorithms and Data Structures](https://www.manning.com/books/advanced-algorithms-and-data-structures)
@@ -21,7 +21,7 @@ Having this in mind, I developed this repository for personal purposes in order 
  - [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)
 
 
-## Autores
+## Autors
 
 - [@jpcunhadias](https://www.github.com/jpcunhadias)
 
