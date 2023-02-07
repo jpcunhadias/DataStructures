@@ -21,7 +21,7 @@ Having this in mind, I developed this repository for personal purposes in order 
  - [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms)
 
 
-## Autors
+## Autor
 
 - [@jpcunhadias](https://www.github.com/jpcunhadias)
 
